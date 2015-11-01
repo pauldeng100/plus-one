@@ -6,7 +6,7 @@ MAINTAINER pauldeng <pauldeng100@163.com>
 RUN yum -y install curl wget 
 
 #Change source
-RUN curl https://github.com/pauldeng100/plus-one/raw/master/docker/aliyun-centos6-yum.sh | sh
+RUN curl https://raw.githubusercontent.com/pauldeng100/plus-one/master/docker/aliyun-centos6-yum.sh | sh
 
 #Install other common softwares
 RUN yum -y install passwd vim iftop htop man glibc.i686 wget tar wget unzip python-setuptools dos2unix openssh-server telnet which sudo libaio*\
