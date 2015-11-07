@@ -9,8 +9,7 @@ RUN yum -y install curl wget
 RUN curl https://raw.githubusercontent.com/pauldeng100/plus-one/master/docker/aliyun-centos6-yum.sh | sh
 
 #Install other common softwares
-RUN yum -y install passwd vim iftop htop man glibc.i686 wget tar wget unzip python-setuptools dos2unix openssh-server telnet which sudo libaio*\
-    && yum -y clean all
+RUN yum -y install supervisor  passwd vim iftop htop man glibc.i686 wget tar wget unzip python-setuptools dos2unix openssh-server telnet which sudo libaio*
 	
 #Change the root password
 RUN echo 'root:123abcABC' | chpasswd
@@ -27,6 +26,7 @@ RUN useradd docker \
 
 #Add the created user into sudoer
 RUN echo "docker        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
-CMD /usr/sbin/sshd -D
+ADD supervisor.conf /etc/supervisor.conf
+CMD ["supervisord", "-c", "/etc/supervisor.conf"]
 #End
 
