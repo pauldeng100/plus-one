@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.apache.camel</groupId>
+		<artifactId>examples</artifactId>
+		<version>2.16.1</version>
+	</parent>
+
+	<artifactId>camel-example-file-copy</artifactId>
+	<name>Camel in Action :: File Copy Example</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+		
+		   <!-- for logging using log4j.properties in src/main/resources -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        
+	</dependencies>
+	
+
+  <build>
+    <plugins>
+      
+
+      <!-- Allows the example to be run via 'mvn compile exec:java' -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.aaxiscommerce.camel.FileCopierWithCamel</mainClass>
+          <includePluginDependencies>false</includePluginDependencies>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+    
+</project>
