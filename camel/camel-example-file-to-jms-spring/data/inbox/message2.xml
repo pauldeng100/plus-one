@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order id="o1234568">
+	<amount>100.00</amount>
+	<discount>20.00</discount>
+	<items>
+		<item>
+			<id>ci1001</id>
+			<name>item01</name>
+			<amount>20</amount>
+			<quantity>1</quantity>
+		</item>
+		
+		<item>
+			<id>ci1002</id>
+			<name>item02</name>
+			<amount>50</amount>
+			<quantity>2</quantity>
+		</item>
+	</items>
+</order>		
