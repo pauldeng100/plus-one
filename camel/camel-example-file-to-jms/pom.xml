@@ -9,8 +9,8 @@
 		<version>2.16.1</version>
 	</parent>
 
-	<artifactId>camel-example-file-copy</artifactId>
-	<name>Camel in Action :: File Copy Example</name>
+	<artifactId>camel-example-file-to-jms</artifactId>
+	<name>Camel in Action :: File To JMS (with processor) Example</name>
 	
 	<dependencies>
 		<dependency>
@@ -29,13 +29,38 @@
             <artifactId>log4j</artifactId>
         </dependency>
         
+        <!-- camel jms and activemq -->        
+        <dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jms</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-camel</artifactId>
+		</dependency>
+		
+		<!-- embed ActiveMQ broker -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-broker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-kahadb-store</artifactId>
+		</dependency>
+		
 	</dependencies>
 	
 	<profiles>
 		<profile>
 			<id>run</id>
 			<properties>
-				<target.main.class>com.aaxiscommerce.camel.FileCopierWithCamel</target.main.class>
+				<target.main.class>com.aaxiscommerce.camel.FileToJMSWithCamel</target.main.class>
 			</properties>
 		</profile>
 	</profiles>
